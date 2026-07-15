@@ -57,6 +57,11 @@ app.get('/', (req, res) => {
 
 // Route for the home page
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public', 'index.html'));
+});
+
+// Route for the home page
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public', 'index.html')); // Serve index.html if needed
 });
 
