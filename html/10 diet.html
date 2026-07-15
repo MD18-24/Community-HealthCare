@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Healthy Diet</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .intro {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .intro img {
+            width: 200px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+            gap: 20px;
+        }
+
+        .section img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .section-content {
+            flex: 1;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #2193b0;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .need {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        /* Alternate layout */
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #6dd5ed;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .reverse {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Healthy & Balanced Diet</h1>
+</header>
+
+<div class="container">
+
+    <div class="intro">
+        <h2>Need of Healthy Diet</h2>
+        <p>
+            A healthy and balanced diet provides essential nutrients, supports growth, boosts immunity,
+            and helps prevent diseases. It ensures overall physical and mental well-being.
+        </p>
+        <img src="https://th.bing.com/th/id/OIP.9CIikU1oVZn8t-k2REjKYQHaHa" alt="food">
+    </div>
+
+    <!-- Carbs -->
+    <div class="section">
+        <img src="https://www.kaizo-health.com/wp-content/uploads/2020/09/Carbohydrate-Blog-scaled.jpeg">
+        <div class="section-content">
+            <h2>Carbohydrates</h2>
+            <p>Primary energy source for the body. Helps brain function and physical activity.</p>
+            <p class="need">Need: 225–325g (45–65%)</p>
+        </div>
+    </div>
+
+    <!-- Protein -->
+    <div class="section reverse">
+        <img src="https://www.thrivenaija.com/wp-content/uploads/2020/01/healthy-food-high-in-protein.jpg">
+        <div class="section-content">
+            <h2>Proteins</h2>
+            <p>Builds and repairs tissues, supports immunity and muscle growth.</p>
+            <p class="need">Need: 50–175g (10–35%)</p>
+        </div>
+    </div>
+
+    <!-- Fats -->
+    <div class="section">
+        <img src="https://static.wixstatic.com/media/95ac29_940103b214f1457b8561a964c36c176b~mv2.jpeg">
+        <div class="section-content">
+            <h2>Fats</h2>
+            <p>Provide energy, protect organs, and help absorb vitamins.</p>
+            <p class="need">Need: 44–77g (20–35%)</p>
+        </div>
+    </div>
+
+    <!-- Minerals -->
+    <div class="section reverse">
+        <img src="https://th.bing.com/th/id/OIP.N3RiVCJZ0l8wHUdYueJsYgAAAA">
+        <div class="section-content">
+            <h2>Minerals</h2>
+            <p>Support bones, blood, muscles, and overall body functions.</p>
+            <p class="need">Need: ~2800 mg</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Visit <a href="diet_plan.html" target="_blank">Diet Plan</a>
+</footer>
+
+</body>
+</html>

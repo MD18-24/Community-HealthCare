@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Form</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eaf6ff;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Section spacing */
+h2, h3 {
+    text-align: center;
+    color: #0077b6;
+}
+
+/* Cards section */
+.hosp {
+    padding: 20px;
+}
+
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #dff1ff;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card .header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+.card .body {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Table styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    transition: 0.2s;
+}
+
+td:hover {
+    background: #caf0f8;
+    cursor: pointer;
+}
+
+/* Links */
+td a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+/* Back button */
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background: #4facfe;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: #0077b6;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Multi-purpose Hospitals in Mumbai</h1>
+
+<div class="hosp">
+    <div class="user-cards">
+
+        <div class="card">
+            <a href="tata.html" target="_blank">
+                <div class="header">Tata Memorial Hospital</div>
+                <div class="body">Cancer Hospital</div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="kem.html" target="_blank">
+                <div class="header">K.E.M Hospital</div>
+                <div class="body">Multi-purpose</div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="p.d.hinduja.html" target="_blank">
+                <div class="header">P.D. Hinduja Hospital</div>
+                <div class="body">Multi-purpose</div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<h2>Government Hospitals in Maharashtra</h2>
+<h3>Select District</h3>
+
+<table>
+<tr>
+<td>Ahmednagar</td><td>Akola</td><td>Amravati</td>
+</tr>
+<tr>
+<td>Aurangabad</td><td>Beed</td><td>Bhandara</td>
+</tr>
+<tr>
+<td>Buldhana</td><td>Chandrapur</td><td>Dhule</td>
+</tr>
+<tr>
+<td>Gadchiroli</td><td>Gondia</td><td>Hingoli</td>
+</tr>
+<tr>
+<td>Jalgaon</td><td>Jalna</td><td>Kolhapur</td>
+</tr>
+<tr>
+<td>Latur</td><td>Mumbai City</td><td>Mumbai Suburban</td>
+</tr>
+<tr>
+<td>Nagpur</td><td>Nanded</td><td>Nandurbar</td>
+</tr>
+<tr>
+<td>Nashik</td><td>Osmanabad</td><td>Palghar</td>
+</tr>
+<tr>
+<td>Parbhani</td><td>Pune</td><td>Raigad</td>
+</tr>
+<tr>
+<td>Ratnagiri</td><td>Sangli</td><td><a href="#">Satara</a></td>
+</tr>
+<tr>
+<td><a href="8 sindhudurg.html">Sindhudurg</a></td>
+<td>Solapur</td><td>Thane</td>
+</tr>
+<tr>
+<td>Wardha</td><td>Washim</td><td>Yavatmal</td>
+</tr>
+</table>
+
+<a href="2 home.html" class="back-link">← Back to Home</a>
+
+</body>
+</html>

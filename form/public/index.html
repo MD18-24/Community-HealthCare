@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <title>Symptom Form</title>
+    <style>
+        /* Basic styling for body */
+        body {
+            font-family: Arial, sans-serif;
+            /* Font style */
+            background-color: #e6f2ff;
+            /* Background color */
+            margin: 0;
+            /* Remove default margin */
+            padding: 20px;
+            /* Padding around content */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+        }
+
+        /* Styling for header container */
+        .header-container {
+            display: flex;
+            /* Flexbox layout */
+            align-items: center;
+            /* Center items vertically */
+            justify-content: center;
+            /* Center items horizontally */
+            margin-bottom: 20px;
+            /* Space below header */
+        }
+
+        /* Styling for icon and logo */
+        .icon {
+            margin-right: 20px;
+            /* Space between icon and heading */
+        }
+
+        .logo {
+            color: #ff7200;
+            /* Logo color */
+            font-size: 35px;
+            /* Logo font size */
+            font-family: Arial, sans-serif;
+            /* Font style */
+        }
+
+        /* Styling for main heading */
+        h1 {
+            margin: 0;
+            /* Remove default margin */
+            font-size: 2em;
+            /* Font size */
+            color: #333;
+            /* Font color */
+        }
+
+        /* Styling for subheadings */
+        h2 {
+            text-align: center;
+            /* Center-align text */
+            color: #333;
+            /* Font color */
+        }
+
+        /* Styling for form container */
+        form {
+            background-color: #ffffff;
+            /* Background color */
+            padding: 20px;
+            /* Padding inside form */
+            border-radius: 8px;
+            /* Rounded corners */
+            max-width: 600px;
+            /* Maximum width */
+            margin: auto;
+            /* Center-align form */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Shadow effect */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+        }
+
+        /* Styling for form labels */
+        label {
+            display: block;
+            /* Block-level element */
+            margin-top: 10px;
+            /* Space above labels */
+            font-weight: bold;
+            /* Bold text */
+            color: #333;
+            /* Font color */
+        }
+
+        /* Styling for input and textarea fields */
+        input[type='text'],
+        input[type='email'],
+        input[type='number'],
+        textarea,
+        select {
+            width: calc(100% - 20px);
+            /* Full width minus padding */
+            padding: 10px;
+            /* Padding inside fields */
+            margin-top: 5px;
+            /* Space above fields */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+            border: 1px solid #ccc;
+            /* Border style */
+            border-radius: 4px;
+            /* Rounded corners */
+        }
+
+        /* Resizable textarea */
+        textarea {
+            resize: vertical;
+            /* Allow vertical resizing */
+        }
+
+        /* Styling for submit button */
+        input[type='submit'] {
+            margin-top: 20px;
+            /* Space above button */
+            padding: 12px 20px;
+            /* Padding inside button */
+            background-color: #007bff;
+            /* Button background color */
+            color: #ffffff;
+            /* Button text color */
+            border: none;
+            /* No border */
+            border-radius: 4px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            width: 100%;
+            /* Full width */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+            font-size: 16px;
+            /* Font size */
+        }
+
+        /* Styling for submit button on hover */
+        input[type='submit']:hover {
+            background-color: #3ab90f;
+            /* Button background color on hover */
+        }
+
+        /* Styling for checkbox group */
+        .checkbox-group {
+            display: grid;
+            /* Use grid layout for better control */
+            grid-template-columns: repeat(2, 1fr);
+            /* Two columns */
+            gap: 10px;
+            /* Space between checkboxes */
+            margin-bottom: 20px;
+            /* Space below checkbox group */
+        }
+
+        /* Ensure description field is below checkbox group */
+        textarea#detailed-symptoms {
+            margin-top: 20px;
+            /* Space above description field */
+        }
+
+        /* Styling for each checkbox container */
+        .checkbox-group div {
+            width: 100%;
+            /* Full width */
+        }
+
+        /* Styling for gender radio buttons */
+        .gender-group {
+            display: flex;
+            /* Flexbox layout */
+            justify-content: center;
+            /* Center-align items */
+            flex-wrap: wrap;
+            /* Wrap items to new lines */
+            margin-bottom: 20px;
+            /* Space below radio buttons */
+        }
+
+        /* Styling for gender radio button labels */
+        .gender-group label {
+            display: inline-block;
+            /* Inline-block for spacing */
+            margin-right: 20px;
+            /* Space between options */
+            font-weight: normal;
+            /* Normal font weight */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+
+            input[type='text'],
+            input[type='email'],
+            input[type='number'],
+            textarea,
+            select {
+                width: 100%;
+                /* Full width on small screens */
+            }
+        }
+
+        .gender-group {
+            margin-top: 10px;
+            /* Space above gender group on small screens */
+        }
+
+        /* Styling for phone number group */
+        .phone-group {
+            display: flex;
+            /* Use flexbox layout */
+            align-items: center;
+            /* Center align items vertically */
+            margin-top: 10px;
+            /* Space above phone group */
+        }
+
+        .phone-group input {
+            padding: 10px;
+            /* Padding inside inputs */
+            border: 1px solid #ccc;
+            /* Border style */
+            border-radius: 4px;
+            /* Rounded corners */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width and height */
+        }
+
+        .phone-group input#country-code {
+            flex: 1 1 auto;
+            /* Flex item will shrink and grow as needed */
+            max-width: 80px;
+            /* Optional: set a max width for the country code */
+            margin-right: 10px;
+            /* Space between country code and phone number */
+        }
+
+        .phone-group input#phone {
+            flex: 3 1 auto;
+            /* Flex item will shrink and grow as needed */
+            max-width: 250px;
+            /* Optional: set a max width for the phone number */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="icon">
+            <h2 class="logo">
+                <i class="fa-solid fa-hospital" style="font-size: 60px"></i>
+            </h2>
+        </div>
+        <h1>Community Health Care Website</h1>
+    </div>
+
+<form id="symptomForm" action="http://localhost:3000/api/symptoms" method="post">
+        <fieldset>
+            <legend>
+                <h2>Patient Personal Information</h2>
+            </legend>
+            <label for="name">Enter your Full Name</label>
+            <input type="text" id="name" name="name" placeholder="First_Name Middle_Name Surname" required />
+
+            <label for="email">Enter your email</label>
+            <input type="email" id="email" name="email" placeholder="xyz@gmail.com" required />
+
+            <label for="phone">Enter your phone number</label>
+            <div class="phone-group">
+                <input type="text" id="country-code" name="country-code" placeholder="+91" value="+91" />
+                <input type="text" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required />
+            </div>
+
+            <label>Enter your gender</label>
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="others" />
+                <label for="others">Others</label>
+            </div>
+
+            <label for="address">Enter your address</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="pincode">Enter your pincode</label>
+            <input type="text" id="pincode" name="pincode" required />
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Symptoms Information</h2>
+            </legend>
+            <label>Check the symptoms you are experiencing</label>
+            <div class="checkbox-group">
+                <!-- Checkboxes for symptoms -->
+                <div>
+                    <label for="fever">
+                        <input type="checkbox" id="fever" name="common-symptoms" value="fever" />
+                        Fever
+                    </label>
+                </div>
+                <div>
+                    <label for="cough">
+                        <input type="checkbox" id="cough" name="common-symptoms" value="cough" />
+                        Cough
+                    </label>
+                </div>
+                <div>
+                    <label for="fatigue">
+                        <input type="checkbox" id="fatigue" name="common-symptoms" value="fatigue" />
+                        Fatigue
+                    </label>
+                </div>
+                <div>
+                    <label for="headache">
+                        <input type="checkbox" id="headache" name="common-symptoms" value="headache" />
+                        Headache
+                    </label>
+                </div>
+                <div>
+                    <label for="sore-throat">
+                        <input type="checkbox" id="sore-throat" name="common-symptoms" value="sore-throat" />
+                        Sore Throat
+                    </label>
+                </div>
+                <div>
+                    <label for="shortness-of-breath">
+                        <input type="checkbox" id="shortness-of-breath" name="common-symptoms"
+                            value="shortness-of-breath" />
+                        Shortness of Breath
+                    </label>
+                </div>
+                <div>
+                    <label for="muscle-pain">
+                        <input type="checkbox" id="muscle-pain" name="common-symptoms" value="muscle-pain" />
+                        Muscle Pain
+                    </label>
+                </div>
+                <div>
+                    <label for="loss-of-taste-smell">
+                        <input type="checkbox" id="loss-of-taste-smell" name="common-symptoms"
+                            value="loss-of-taste-smell" />
+                        Loss of Taste or Smell
+                    </label>
+                </div>
+                <div>
+                    <label for="chest-pain">
+                        <input type="checkbox" id="chest-pain" name="common-symptoms" value="chest-pain" />
+                        Chest Pain
+                    </label>
+                </div>
+                <div>
+                    <label for="nausea">
+                        <input type="checkbox" id="nausea" name="common-symptoms" value="nausea" />
+                        Nausea
+                    </label>
+                </div>
+                <div>
+                    <label for="dizziness">
+                        <input type="checkbox" id="dizziness" name="common-symptoms" value="dizziness" />
+                        Dizziness
+                    </label>
+                </div>
+                <div>
+                    <label for="chills">
+                        <input type="checkbox" id="chills" name="common-symptoms" value="chills" />
+                        Chills
+                    </label>
+                </div>
+                <div>
+                    <label for="vomiting">
+                        <input type="checkbox" id="vomiting" name="common-symptoms" value="vomiting" />
+                        Vomiting
+                    </label>
+                </div>
+                <div>
+                    <label for="diarrhea">
+                        <input type="checkbox" id="diarrhea" name="common-symptoms" value="diarrhea" />
+                        Diarrhea
+                    </label>
+                </div>
+                <div>
+                    <label for="rash">
+                        <input type="checkbox" id="rash" name="common-symptoms" value="rash" />
+                        Rash
+                    </label>
+                </div>
+                <div>
+                    <label for="congestion">
+                        <input type="checkbox" id="congestion" name="common-symptoms" value="congestion" />
+                        Congestion or Runny Nose
+                    </label>
+                </div>
+            </div>
+
+            <label for="detailed-symptoms">Please describe your symptoms in detail (if any):</label>
+            <textarea id="detailed-symptoms" name="detailed-symptoms" rows="4"
+                placeholder="Provide any additional details here..."></textarea>
+
+            <label for="severity">Severity of symptoms</label>
+            <select id="severity" name="severity" required>
+                <option value="mild">Mild</option>
+                <option value="moderate">Moderate</option>
+                <option value="severe">Severe</option>
+            </select>
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+        document.getElementById('symptomForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const countryCode = document.getElementById('country-code').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const address = document.getElementById('address').value;
+            const pincode = document.getElementById('pincode').value;
+            const commonSymptoms = Array.from(document.querySelectorAll('input[name="common-symptoms"]:checked')).map(checkbox => checkbox.value);
+            const detailedSymptoms = document.getElementById('detailed-symptoms').value;
+            const severity = document.getElementById('severity').value;
+
+            // Prepare data to send
+            const data = {
+                name,
+                email,
+                phone,
+                countryCode,
+                gender,
+                address,
+                pincode,
+                commonSymptoms,
+                detailedSymptoms,
+                severity
+            };
+
+            // Update the fetch URL to match the server route
+            const response = await fetch('/api/symptoms', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Symptoms submitted successfully!');
+                document.getElementById('symptomForm').reset(); // Reset the form
+            } else {
+                const errorMessage = await response.text();
+                alert('Error submitting symptoms: ' + errorMessage);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
