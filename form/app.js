@@ -10,7 +10,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-const port = 3000;
+
 
 // OpenCage Geocoding API key
 const OPEN_CAGE_API_KEY = '7a10240fdf694caa89e7925f9b642fd2';
