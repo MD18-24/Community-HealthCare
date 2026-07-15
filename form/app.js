@@ -51,6 +51,10 @@ const symptomSchema = new mongoose.Schema({
 // Create a model for the symptoms
 const Symptom = mongoose.model('Symptom', symptomSchema);
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../html/1 Icon.html'));
+});
+
 // Route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public', 'index.html')); // Serve index.html if needed
