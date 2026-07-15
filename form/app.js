@@ -22,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/html', express.static(path.join(__dirname, '../html')));
 // Serve static files (like index.html)
 app.use(express.static(path.join(__dirname, 'public'))); // Adjust the path if necessary
+app.use('/schemes', express.static(path.join(__dirname, '../schemes')));
 
 // Serve JavaScript files from the scripts directory (for internal usage, not for client-side)
 //app.use('/scripts', express.static(path.join(__dirname)));  // Serve static JavaScript files from the scripts folder
