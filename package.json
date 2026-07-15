@@ -1,4 +1,11 @@
 {
+  "name": "community-healthcare",
+  "version": "1.0.0",
+  "description": "Community HealthCare Web Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "^4.21.1",
     "mongodb": "^6.11.0",
