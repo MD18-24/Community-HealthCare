@@ -19,6 +19,7 @@ const OPEN_CAGE_API_KEY = '7a10240fdf694caa89e7925f9b642fd2';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/html', express.static(path.join(__dirname, '../html')));
 // Serve static files (like index.html)
 app.use(express.static(path.join(__dirname, 'public'))); // Adjust the path if necessary
 
@@ -52,7 +53,7 @@ const symptomSchema = new mongoose.Schema({
 const Symptom = mongoose.model('Symptom', symptomSchema);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html/1 Icon.html'));
+    res.redirect('/html/1%20Icon.html');
 });
 
 // Route for the home page
